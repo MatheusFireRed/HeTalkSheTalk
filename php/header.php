@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="style/styleHeader.css">
+<link rel="stylesheet" href="style/styleHeaderMobile.css">
 
 <div id="card-header">
     
     <div id="header-logo">
     
         <a href="index.php"><img id="logo" src="img/logo.png" alt="Logomarca do site."></a>
-    
     </div>
     
     <nav id="header-nav">
