@@ -15,6 +15,7 @@
       
         <header>
           <?php include 'php/header.php'; ?>
+          <?php include 'php/DB/conexaoDB.php'; ?>
         </header> 
     <main>
             <div class="linha">
