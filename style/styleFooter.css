@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ca7d5d706d9ec2e19aad1b5cdc2bf45a6daeb197
 :root{
     --cor-footer: wheat;
 }
@@ -9,6 +12,8 @@ footer{
     background-color: var(--cor-footer);
     margin-top: 30px;
     box-shadow: 1px 1px 15px 1px black;
+<<<<<<< HEAD
+=======
 =======
 :root{
     --cor-footer: wheat;
@@ -21,4 +26,5 @@ footer{
     margin-top: 30px;
     box-shadow: 1px 1px 15px 1px black;
 >>>>>>> 8753e44551dbed5067c37469ca9cc7403a7f9a5b
+>>>>>>> ca7d5d706d9ec2e19aad1b5cdc2bf45a6daeb197
 }

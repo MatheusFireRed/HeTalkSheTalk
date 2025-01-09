@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ca7d5d706d9ec2e19aad1b5cdc2bf45a6daeb197
     const track = document.querySelector('.carousel-track');
     const items = document.querySelectorAll('.carousel-item');
     const prevButton = document.querySelector('.prev');
@@ -20,6 +23,8 @@
       updateCarousel();
     });
 
+<<<<<<< HEAD
+=======
 =======
     const track = document.querySelector('.carousel-track');
     const items = document.querySelectorAll('.carousel-item');
@@ -43,4 +48,5 @@
     });
 
 >>>>>>> 8753e44551dbed5067c37469ca9cc7403a7f9a5b
+>>>>>>> ca7d5d706d9ec2e19aad1b5cdc2bf45a6daeb197
     window.addEventListener('resize', updateCarousel);

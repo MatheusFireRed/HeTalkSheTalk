@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ca7d5d706d9ec2e19aad1b5cdc2bf45a6daeb197
 123 resenha!
 luz, câmera, resenha!
 O que temos a dizer?!
@@ -6,6 +9,8 @@ O que temos a dizer?!
 
 Texto introdutório:
 
+<<<<<<< HEAD
+=======
 =======
 123 resenha!
 luz, câmera, resenha!
@@ -15,4 +20,5 @@ O que temos a dizer?!
 Texto introdutório:
 
 >>>>>>> 8753e44551dbed5067c37469ca9cc7403a7f9a5b
+>>>>>>> ca7d5d706d9ec2e19aad1b5cdc2bf45a6daeb197
 Se você é apaixonado por filmes, séries, animes e documentários, está no lugar certo! Aqui no He Talk, She Talk!, quatro vozes diferentes – cada uma com suas próprias opiniões, gostos e pontos de vista – se juntam para trazer debates envolventes, dicas imperdíveis e análises detalhadas sobre o universo do entretenimento.
