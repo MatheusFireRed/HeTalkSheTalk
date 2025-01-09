@@ -37,6 +37,38 @@ if (!isset($_SESSION['user_id'])) {
 
     <main>
 
+        <div class="card">
+            <form action="php/incluirTitulo.php">
+                <div class="label-input">
+                    <label for="titulo">Título</label>
+                    <input type="text">
+                </div>
+
+                <div class="label-input">
+                    <label for="tipo">Tipo</label>
+                    <select name="tipo" id="tipo">
+                        <option value="">Selecionar..</option>
+                        <option value="serie">Série</option>
+                        <option value="filme">Filme</option>
+                        <option value="anime">Anime</option>
+                        <option value="documentario">Documentário</option>
+                    </select>
+                </div>
+
+                <div class="label-input">
+                    <label for="categoria">Categoria</label>
+                    <select name="categoria" id="categoria">
+                        <option value="">Selecionar..</option>
+                        <option value="terror">Terror</option>
+                        <option value="comedia">Comédia</option>
+                        <option value="acao">Ação</option>
+                        <option value="romance">Romance</option>
+                    </select>
+                </div>
+
+                <input type="submit" value="Incluir!">
+            </form>
+        </div>
 
     </main>
 
