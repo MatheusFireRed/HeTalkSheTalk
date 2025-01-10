@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="style/styleHeader.css">
-<link rel="stylesheet" href="style/styleHeaderMobile.css">
 
 <div id="card-header">
     

@@ -1,3 +1,9 @@
+<?php
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Pragma: no-cache");
+    header("Expires: Thu, 19 Nov 1981 08:52:00 GMT");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,6 +14,7 @@
     <link rel="stylesheet" href="style/styleLogin.css">
 </head>
 <body>
+
     <main>
         <form class="card-login" method="POST" action="php/DB/logar.php">
 
@@ -27,5 +34,15 @@
             <input type="submit" id="logar" value="Logar">
         </form>
     </main>
+    <script>
+        window.onload = function() {
+            // Substitui a entrada atual no histórico
+            window.history.replaceState(null, null, window.location.href);
+            // Impede que o usuário use o botão "Voltar"
+            window.onpopstate = function() {
+                window.history.replaceState(null, null, window.location.href);
+            };
+        };
+    </script>
 </body>
 </html>

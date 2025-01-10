@@ -2,9 +2,13 @@
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: index.php");
+    header("Location: login.php");
     exit;
 }
+
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+header("Expires: Thu, 19 Nov 1981 08:52:00 GMT");
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +36,9 @@ if (!isset($_SESSION['user_id'])) {
                </li>
             </ul>
         </div>
-        <a class="logout" href="login.php">Sair</a>
+        <form action="php/DB/logout.php" method="post">
+            <button type="submit">Sair</button>
+        </form>
     </header>
 
     <main>
