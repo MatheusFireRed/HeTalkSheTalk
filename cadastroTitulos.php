@@ -38,10 +38,10 @@ if (!isset($_SESSION['user_id'])) {
     <main>
 
         <div class="card">
-            <form action="php/incluirTitulo.php">
+            <form action="php/DB/incluirTitulo.php" method="POST">
                 <div class="label-input">
                     <label for="titulo">Título</label>
-                    <input type="text">
+                    <input type="text" name="titulo" id="titulo">
                 </div>
 
                 <div class="label-input">
@@ -66,7 +66,7 @@ if (!isset($_SESSION['user_id'])) {
                     </select>
                 </div>
 
-                <input type="submit" value="Incluir!">
+                <button type="submit">Enviar</button>
             </form>
         </div>
 
