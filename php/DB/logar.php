@@ -22,12 +22,7 @@
 
             exit;
         } else {
-            echo "Usuário ou senha inválidos.";
-
-            echo "Senha enviada: " . $password . "<br>";
-            echo "Senha no banco: " . $user['password'] . "<br>";
-            echo "Username no banco: " . $user['username'] . "<br>";
-            echo "Username enviado: " . ($username) . "<br>";
+           header("Location: ../../html/falhaLogin.html");
         }
     }
 ?>
