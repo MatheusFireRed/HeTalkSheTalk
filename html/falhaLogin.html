@@ -13,6 +13,18 @@
         }, 3000); // 3 segundos
     </script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        :root{
+            --cor-body: rgb(167, 167, 216);
+
+            --fonte-principal: "Montserrat", serif;
+        }
+
+        *{
+            font-family: var(--fonte-principal);
+        }
+
         body{
             width: 100vw;
             height: 100vh;
@@ -20,6 +32,7 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            background-color: var(--cor-body);
         }
     </style>
 
