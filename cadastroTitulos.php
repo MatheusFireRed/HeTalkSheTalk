@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
@@ -12,6 +13,20 @@ header("Expires: Thu, 19 Nov 1981 08:52:00 GMT");
 
 
 $tituloDaPagina = 'Area de Criação';
+
+require_once 'php/DB/conexaoDB.php';
+
+try {
+    // Consulta para obter os dados
+    $query = "SELECT categoria_id, categoria FROM categorias ORDER BY categoria";
+    $stmt = $pdo->query($query);
+
+    // Verifica se há resultados
+    $opcoes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+} catch (PDOException $e) {
+    die("Erro ao buscar os dados: " . $e->getMessage());
+}
 
 ?>
 
@@ -78,10 +93,11 @@ $tituloDaPagina = 'Area de Criação';
                         <label for="categoria">Categoria</label>
                         <select name="categoria" id="categoria">
                             <option value="">Selecionar..</option>
-                            <option value="terror">Terror</option>
-                            <option value="comedia">Comédia</option>
-                            <option value="acao">Ação</option>
-                            <option value="romance">Romance</option>
+                            <?php foreach ($opcoes as $opcao): ?>
+                            <option value="<?= htmlspecialchars($opcao['categoria_id']) ?>">
+                                <?= htmlspecialchars($opcao['categoria']) ?>
+                            </option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
 
