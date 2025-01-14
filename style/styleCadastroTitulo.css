@@ -104,3 +104,17 @@ form textarea{
 .label-input input{
     width: 200px;
 }
+
+#categorias{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#categorias label{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

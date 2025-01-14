@@ -90,15 +90,15 @@ try {
                     </div>
 
                     <div class="label-input">
-                        <label for="categoria">Categoria</label>
-                        <select name="categoria" id="categoria">
-                            <option value="">Selecionar..</option>
+                        <label>Categorias</label>
+                        <div id="categorias">
                             <?php foreach ($opcoes as $opcao): ?>
-                            <option value="<?= htmlspecialchars($opcao['categoria_id']) ?>">
+                            <label>
+                                <input type="checkbox" name="categorias[]" value="<?= htmlspecialchars($opcao['categoria_id']) ?>">
                                 <?= htmlspecialchars($opcao['categoria']) ?>
-                            </option>
+                            </label><br>
                             <?php endforeach; ?>
-                        </select>
+                        </div>
                     </div>
 
                     <div class="label-input">
@@ -107,8 +107,8 @@ try {
                     </div>
 
                     <div class="label-input">
-                        <label for="durecao">Duração</label>
-                        <input type="text" id="duracao" name="durecao">
+                        <label for="duracao">Duração</label>
+                        <input type="text" id="duracao" name="duracao">
                     </div>
                     
                     <div class="label-input">
