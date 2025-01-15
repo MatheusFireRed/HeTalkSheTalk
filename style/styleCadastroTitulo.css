@@ -107,12 +107,13 @@ form textarea{
     flex-direction: column;
 }
 
-.label-input input{
-    width: 100%;
+
+.input-select{
+    width: 10%;
 }
 
 #categorias{
-    width: 50px;
+    width: 150px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -123,4 +124,38 @@ form textarea{
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.label-input {
+    display: flex;
+    flex-direction: column;
+    height: 30%; /* Ocupa 100% da altura da div pai */
+}
+
+#search-categorias {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.categorias-container {
+    flex: 1; /* Faz com que a área de categorias ocupe o restante do espaço */
+    overflow-y: auto; /* Adiciona barra de rolagem vertical */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+.categoria-item {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.categoria-item:last-child {
+    margin-bottom: 0;
 }

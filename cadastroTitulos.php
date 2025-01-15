@@ -69,12 +69,12 @@ try {
                 <div class="coluna">
                     <div class="label-input">
                         <label for="titulo">Título</label>
-                        <input type="text" name="titulo" id="titulo">
+                        <input class="input100" type="text" name="titulo" id="titulo">
                     </div>
 
                     <div class="label-input">
                         <label for="titulo-original">Titulo Original</label>
-                        <input type="text" name="titulo-original" id="titulo-original">
+                        <input class="input100" type="text" name="titulo-original" id="titulo-original">
                     </div>
 
                     <div class="label-input">
@@ -88,18 +88,34 @@ try {
                             <option value="reality-show">Reality Show</option>
                         </select>
                     </div>
+    
 
                     <div class="label-input">
-                        <label>Categorias</label>
-                        <div id="categorias">
+                        <label for="search-categorias">Categorias</label>
+                        <input type="text" id="search-categorias" placeholder="Pesquisar categorias...">
+                        <div id="categorias" class="categorias-container">
                             <?php foreach ($opcoes as $opcao): ?>
-                            <label>
-                                <input type="checkbox" name="categorias[]" value="<?= htmlspecialchars($opcao['categoria_id']) ?>">
+                            <label class="categoria-item">
+                                <input class="input-select" type="checkbox" name="categorias[]" value="<?= htmlspecialchars($opcao['categoria_id']) ?>">
                                 <?= htmlspecialchars($opcao['categoria']) ?>
-                            </label><br>
+                            </label>
                             <?php endforeach; ?>
                         </div>
                     </div>
+
+                    
+
+                    <script>
+                        document.getElementById('search-categorias').addEventListener('input', function () {
+                            const filter = this.value.toLowerCase();
+                            const categorias = document.querySelectorAll('.categoria-item');
+
+                            categorias.forEach(categoria => {
+                                const text = categoria.textContent.toLowerCase();
+                                categoria.style.display = text.includes(filter) ? 'block' : 'none';
+                            });
+                        });
+                    </script>
 
                     <div class="label-input">
                         <label for="diretor">Diretor</label>
@@ -141,6 +157,10 @@ try {
                     <div class="label-input">
                         <label for="classificacao">Classificação</label>
                         <input type="text" name="classificacao" id="classificacao">
+                    </div>
+
+                    <div class="label-input">
+
                     </div>
                 </div>
                 <button type="submit">Enviar</button>

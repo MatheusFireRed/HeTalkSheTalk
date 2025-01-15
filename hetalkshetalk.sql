@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14/01/2025 às 18:08
+-- Tempo de geração: 15/01/2025 às 20:34
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -33,8 +33,16 @@ CREATE TABLE `atores` (
   `nascimento` date NOT NULL,
   `falecimento` date NOT NULL,
   `nacionalidade` varchar(30) NOT NULL,
-  `filmes` int(11) NOT NULL
+  `nome_artistico` varchar(30) DEFAULT NULL,
+  `altura` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `atores`
+--
+
+INSERT INTO `atores` (`id`, `nome`, `nascimento`, `falecimento`, `nacionalidade`, `nome_artistico`, `altura`) VALUES
+(1, 'John Christopher Depp II', '0000-00-00', '0000-00-00', 'Estados Unidos', 'Johny Deep', '1,7');
 
 -- --------------------------------------------------------
 
@@ -55,7 +63,9 @@ CREATE TABLE `categorias` (
 INSERT INTO `categorias` (`categoria_id`, `data`, `categoria`) VALUES
 (1, '2025-01-13 17:20:10', 'Comédia'),
 (2, '2025-01-13 17:20:32', 'Terror'),
-(3, '2025-01-14 15:51:19', 'Romance');
+(3, '2025-01-14 15:51:19', 'Romance'),
+(4, '2025-01-15 19:08:07', 'Ação'),
+(5, '2025-01-15 19:09:12', 'Drama');
 
 -- --------------------------------------------------------
 
@@ -76,18 +86,20 @@ CREATE TABLE `titulos` (
   `sinopse` text DEFAULT NULL,
   `pais_origem` varchar(20) DEFAULT NULL,
   `roteiro` varchar(30) DEFAULT NULL,
-  `elenco` int(11) DEFAULT NULL
+  `classificacao` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `titulos`
 --
 
-INSERT INTO `titulos` (`id`, `data`, `titulo`, `tipo`, `diretor`, `duracao`, `titulo_original`, `data_estreia`, `meta_dados`, `sinopse`, `pais_origem`, `roteiro`, `elenco`) VALUES
+INSERT INTO `titulos` (`id`, `data`, `titulo`, `tipo`, `diretor`, `duracao`, `titulo_original`, `data_estreia`, `meta_dados`, `sinopse`, `pais_origem`, `roteiro`, `classificacao`) VALUES
 (29, '2025-01-10 22:07:55', 'Virgin River', 'serie', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (30, '2025-01-13 14:29:47', 'Round 6', 'serie', 'asdasda', NULL, 'asdadad', '1995-11-02', NULL, NULL, NULL, NULL, NULL),
 (31, '2025-01-13 17:06:33', 'fsdfsdfs', 'serie', 'sdfsdfsdf', NULL, 'fsdfsdfs', '0000-00-00', 'dgdfgdfg', 'dfgdfgdgd', 'ersddggd', 'gdfgdfgdg', NULL),
-(32, '2025-01-14 14:58:36', 'asdasd', 'serie', 'asdads', 0, 'asdasd', '1111-11-11', 'dsasdasd', 'asdasdad', 'asdads', 'asdadsa', NULL);
+(32, '2025-01-14 14:58:36', 'asdasd', 'serie', 'asdads', 0, 'asdasd', '1111-11-11', 'dsasdasd', 'asdasdad', 'asdads', 'asdadsa', NULL),
+(33, '2025-01-15 18:48:19', 'Ghost Recon', 'filme', 'Matheus de oliveira ', 105, 'Ghost Recon', '1995-11-02', 'Filme de ação onde soldados enfrentam o quartel de medelim', 'Filme de ação onde soldados enfrentam o quartel de medelim', 'Brasil', 'Bianca Campos Borges', '18 anos'),
+(34, '2025-01-15 18:58:36', '', '', '', 0, '', '0000-00-00', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -106,7 +118,9 @@ CREATE TABLE `titulo_categoria` (
 
 INSERT INTO `titulo_categoria` (`titulo_id`, `categoria_id`) VALUES
 (32, 1),
-(32, 2);
+(32, 2),
+(33, 3),
+(33, 2);
 
 -- --------------------------------------------------------
 
@@ -172,19 +186,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `atores`
 --
 ALTER TABLE `atores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `titulos`
 --
 ALTER TABLE `titulos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
