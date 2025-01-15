@@ -12,6 +12,7 @@ $metaDados          = $_POST['meta-dados'];
 $sinopse            = $_POST['sinopse'];
 $paisOrigem         = $_POST['pais-origem'];
 $roteiro            = $_POST['roteiro'];
+$classificacao      = $_POST['classificacao'];
 
 try {
     // Iniciar a transação
@@ -27,7 +28,8 @@ try {
          meta_dados,
          sinopse,
          pais_origem,
-         roteiro) 
+         roteiro,
+         classificacao) 
          VALUES
          (:titulo,
           :tipo,
@@ -38,7 +40,8 @@ try {
           :meta_dados,
           :sinopse,
           :pais_origem,
-          :roteiro)";
+          :roteiro,
+          :classificacao)";
 
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':titulo', $titulo);
@@ -51,6 +54,7 @@ try {
     $stmt->bindParam(':sinopse', $sinopse);
     $stmt->bindParam(':pais_origem', $paisOrigem);
     $stmt->bindParam(':roteiro', $roteiro);
+    $stmt->bindParam(':classificacao', $classificacao);
 
     // Executar a inserção
     $stmt->execute();

@@ -137,6 +137,11 @@ try {
                         <label for="sinopse">Sinopse</label>
                         <textarea name="sinopse" id="sinopse"></textarea>
                     </div>
+
+                    <div class="label-input">
+                        <label for="classificacao">Classificação</label>
+                        <input type="text" name="classificacao" id="classificacao">
+                    </div>
                 </div>
                 <button type="submit">Enviar</button>
             </form>
