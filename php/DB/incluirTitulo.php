@@ -13,6 +13,7 @@ $sinopse            = $_POST['sinopse'];
 $paisOrigem         = $_POST['pais-origem'];
 $roteiro            = $_POST['roteiro'];
 $classificacao      = $_POST['classificacao'];
+$atores             = isset($_POST['atores']) ? $_POST['atores'] : [];
 
 try {
     // Iniciar a transação
@@ -71,6 +72,8 @@ try {
             ':categoria_id' => $categoriaId
         ]);
     }
+
+    
 
     // Confirmar transação após todas as inserções
     $pdo->commit();

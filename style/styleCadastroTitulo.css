@@ -112,7 +112,7 @@ form textarea{
     width: 10%;
 }
 
-#categorias{
+#categorias, #atores{
     width: 150px;
     display: flex;
     justify-content: center;
@@ -132,7 +132,7 @@ form textarea{
     height: 30%; /* Ocupa 100% da altura da div pai */
 }
 
-#search-categorias {
+#search-categorias, #search-atores {
     margin-bottom: 10px;
     padding: 8px;
     font-size: 14px;
