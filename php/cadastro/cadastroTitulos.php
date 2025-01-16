@@ -12,7 +12,7 @@ header("Expires: Thu, 19 Nov 1981 08:52:00 GMT");
 
 $tituloDaPagina = 'Área de Criação';
 
-require_once 'php/DB/conexaoDB.php';
+require_once '../DB/conexaoDB.php';
 
 // Consulta para obter categorias
 try {
@@ -37,37 +37,21 @@ try {
 <html>
 <head>
     <title><?php echo $tituloDaPagina ?></title>
-    <link rel="stylesheet" href="style/styleCadastroTitulo.css">
+    <link rel="stylesheet" href="../../style/styleCadastroTitulo.css">
 </head>
 <body>
 
     <header>
-        <div class="box-saudacao">
-            <h1 class="saudacao">Bem-vindo, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
-        </div>
-
-        <div class="box-menu">
-            <ul class="menu">
-                <li>
-                    <a href="cadastroTitulos.php">Cadastrar <br> Título</a>
-                </li> 
-                <li>
-                    <a href="#">Comentar <br> sobre <br> título</a>
-                </li>
-            </ul>
-        </div>
-        <form action="php/DB/logout.php" method="post">
-            <button type="submit">Sair</button>
-        </form>
+        <?php include 'headerCadastro.php' ?>
     </header>
 
     <main>
         <div class="card">
-            <form action="php/DB/incluirTitulo.php" method="POST">
+            <form action="incluirTitulo.php" method="POST">
                 <div class="coluna">
                     <div class="label-input">
                         <label for="titulo">Título</label>
-                        <input class="input100" type="text" name="titulo" id="titulo">
+                        <input class="input100" type="text" name="titulo" id="titulo" required>
                     </div>
 
                     <div class="label-input">

@@ -159,3 +159,8 @@ form textarea{
 .categoria-item:last-child {
     margin-bottom: 0;
 }
+
+.btn-sair{
+    width: 20px;
+    height: 20px;
+}
