@@ -64,7 +64,16 @@ try {
     $tituloId = $pdo->lastInsertId();
 
     // Inserir as categorias associadas ao título
-    foreach ($categorias as $categoriaId) {
+    foreach ($atores as $atorId) {
+        $sqlElenco = "INSERT INTO elencos (titulo_id, ator_id) VALUES (:titulo_id, :ator_id)";
+        $stmtElenco = $pdo->prepare($sqlElenco);
+        $stmtElenco->execute([
+            ':titulo_id' => $tituloId,
+            ':ator_id' => $atorId
+        ]);
+    }
+
+    foreach ($atores as $categoriaId) {
         $sqlCategoria = "INSERT INTO titulo_categoria (titulo_id, categoria_id) VALUES (:titulo_id, :categoria_id)";
         $stmtCategoria = $pdo->prepare($sqlCategoria);
         $stmtCategoria->execute([
@@ -72,6 +81,7 @@ try {
             ':categoria_id' => $categoriaId
         ]);
     }
+
 
     
 

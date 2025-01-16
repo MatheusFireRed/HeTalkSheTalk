@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15/01/2025 às 20:34
+-- Tempo de geração: 16/01/2025 às 18:35
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -70,6 +70,26 @@ INSERT INTO `categorias` (`categoria_id`, `data`, `categoria`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `elencos`
+--
+
+CREATE TABLE `elencos` (
+  `id` int(11) NOT NULL,
+  `titulo_id` int(11) NOT NULL,
+  `ator_id` int(11) NOT NULL,
+  `papel` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `elencos`
+--
+
+INSERT INTO `elencos` (`id`, `titulo_id`, `ator_id`, `papel`) VALUES
+(2, 37, 1, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `titulos`
 --
 
@@ -99,7 +119,7 @@ INSERT INTO `titulos` (`id`, `data`, `titulo`, `tipo`, `diretor`, `duracao`, `ti
 (31, '2025-01-13 17:06:33', 'fsdfsdfs', 'serie', 'sdfsdfsdf', NULL, 'fsdfsdfs', '0000-00-00', 'dgdfgdfg', 'dfgdfgdgd', 'ersddggd', 'gdfgdfgdg', NULL),
 (32, '2025-01-14 14:58:36', 'asdasd', 'serie', 'asdads', 0, 'asdasd', '1111-11-11', 'dsasdasd', 'asdasdad', 'asdads', 'asdadsa', NULL),
 (33, '2025-01-15 18:48:19', 'Ghost Recon', 'filme', 'Matheus de oliveira ', 105, 'Ghost Recon', '1995-11-02', 'Filme de ação onde soldados enfrentam o quartel de medelim', 'Filme de ação onde soldados enfrentam o quartel de medelim', 'Brasil', 'Bianca Campos Borges', '18 anos'),
-(34, '2025-01-15 18:58:36', '', '', '', 0, '', '0000-00-00', '', '', '', '', '');
+(37, '2025-01-16 17:33:44', 'asdasd', 'filme', 'asdasd', 0, 'asdasd', '1111-11-11', 'asdasd', 'asdasdasd', 'asdasdasdasd', '', 'asdasd');
 
 -- --------------------------------------------------------
 
@@ -120,7 +140,8 @@ INSERT INTO `titulo_categoria` (`titulo_id`, `categoria_id`) VALUES
 (32, 1),
 (32, 2),
 (33, 3),
-(33, 2);
+(33, 2),
+(37, 1);
 
 -- --------------------------------------------------------
 
@@ -160,6 +181,14 @@ ALTER TABLE `categorias`
   ADD PRIMARY KEY (`categoria_id`);
 
 --
+-- Índices de tabela `elencos`
+--
+ALTER TABLE `elencos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `titulo_id` (`titulo_id`),
+  ADD KEY `ator_id` (`ator_id`);
+
+--
 -- Índices de tabela `titulos`
 --
 ALTER TABLE `titulos`
@@ -195,10 +224,16 @@ ALTER TABLE `categorias`
   MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT de tabela `elencos`
+--
+ALTER TABLE `elencos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de tabela `titulos`
 --
 ALTER TABLE `titulos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
@@ -209,6 +244,13 @@ ALTER TABLE `usuarios`
 --
 -- Restrições para tabelas despejadas
 --
+
+--
+-- Restrições para tabelas `elencos`
+--
+ALTER TABLE `elencos`
+  ADD CONSTRAINT `elencos_ibfk_1` FOREIGN KEY (`titulo_id`) REFERENCES `titulos` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `elencos_ibfk_2` FOREIGN KEY (`ator_id`) REFERENCES `atores` (`id`) ON DELETE CASCADE;
 
 --
 -- Restrições para tabelas `titulo_categoria`
