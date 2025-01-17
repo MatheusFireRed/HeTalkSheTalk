@@ -34,7 +34,11 @@
     <header>
         <?php include 'headerCadastro.php'; ?>
     </header>
+
     <main>
+
+        
+
         <div class="card">
             <form action="incluirAtores.php" method="post">
 

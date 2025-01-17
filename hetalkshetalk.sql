@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16/01/2025 às 18:35
+-- Tempo de geração: 17/01/2025 às 19:08
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -42,7 +42,14 @@ CREATE TABLE `atores` (
 --
 
 INSERT INTO `atores` (`id`, `nome`, `nascimento`, `falecimento`, `nacionalidade`, `nome_artistico`, `altura`) VALUES
-(1, 'John Christopher Depp II', '0000-00-00', '0000-00-00', 'Estados Unidos', 'Johny Deep', '1,7');
+(1, 'John Christopher Depp II', '1963-06-09', '0000-00-00', 'Estados Unidos', 'Johny Deep', '1,7'),
+(2, 'Matheus de Oliveira Timotheo', '1995-11-02', '0000-00-00', 'Brasileiro', 'LordKafa', NULL),
+(3, 'Bianca Campos Borges', '1111-11-11', '0000-00-00', 'Brasileiro', 'Bibi', NULL),
+(4, 'Bianca Campos Borges', '1111-11-11', '0000-00-00', 'Brasileiro', 'Bibi', NULL),
+(5, 'Leonardo de Souza Timotheo', '2020-02-20', '0000-00-00', 'brasileiro', 'Léo', NULL),
+(6, 'Joelma de Oliveira Timoheo', '1972-08-13', '0000-00-00', 'brasileira', 'calypso', NULL),
+(7, 'Wagner Santos Timotheo', '1967-11-18', '0000-00-00', 'Brasileiro', 'Wagner', NULL),
+(8, 'Leonardo timotheo', '1111-11-11', '0000-00-00', 'Br', 'leo', NULL);
 
 -- --------------------------------------------------------
 
@@ -119,7 +126,9 @@ INSERT INTO `titulos` (`id`, `data`, `titulo`, `tipo`, `diretor`, `duracao`, `ti
 (31, '2025-01-13 17:06:33', 'fsdfsdfs', 'serie', 'sdfsdfsdf', NULL, 'fsdfsdfs', '0000-00-00', 'dgdfgdfg', 'dfgdfgdgd', 'ersddggd', 'gdfgdfgdg', NULL),
 (32, '2025-01-14 14:58:36', 'asdasd', 'serie', 'asdads', 0, 'asdasd', '1111-11-11', 'dsasdasd', 'asdasdad', 'asdads', 'asdadsa', NULL),
 (33, '2025-01-15 18:48:19', 'Ghost Recon', 'filme', 'Matheus de oliveira ', 105, 'Ghost Recon', '1995-11-02', 'Filme de ação onde soldados enfrentam o quartel de medelim', 'Filme de ação onde soldados enfrentam o quartel de medelim', 'Brasil', 'Bianca Campos Borges', '18 anos'),
-(37, '2025-01-16 17:33:44', 'asdasd', 'filme', 'asdasd', 0, 'asdasd', '1111-11-11', 'asdasd', 'asdasdasd', 'asdasdasdasd', '', 'asdasd');
+(37, '2025-01-16 17:33:44', 'asdasd', 'filme', 'asdasd', 0, 'asdasd', '1111-11-11', 'asdasd', 'asdasdasd', 'asdasdasdasd', '', 'asdasd'),
+(38, '2025-01-16 17:40:17', '', '', '', 0, '', '0000-00-00', '', '', '', '', ''),
+(39, '2025-01-16 17:40:44', '', '', '', 0, '', '0000-00-00', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -215,7 +224,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `atores`
 --
 ALTER TABLE `atores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `categorias`
@@ -233,7 +242,7 @@ ALTER TABLE `elencos`
 -- AUTO_INCREMENT de tabela `titulos`
 --
 ALTER TABLE `titulos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`

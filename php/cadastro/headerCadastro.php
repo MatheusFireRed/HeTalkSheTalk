@@ -13,6 +13,9 @@
                 <li>
                     <a href="cadastroAtributosAtores.php">Cadastrar <br> Atributos <br> Atores</a>
                 </li>
+                <li>
+                    <a href="editarInformacoes.php">Editar <br> Informações</a>
+                </li>
             </ul>
         </div>
         <form class="btn-sair" action="logout.php" method="post">
