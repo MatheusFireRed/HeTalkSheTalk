@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17/01/2025 às 19:08
+-- Tempo de geração: 17/01/2025 às 20:38
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -34,22 +34,26 @@ CREATE TABLE `atores` (
   `falecimento` date NOT NULL,
   `nacionalidade` varchar(30) NOT NULL,
   `nome_artistico` varchar(30) DEFAULT NULL,
-  `altura` varchar(10) DEFAULT NULL
+  `cidade_nascimento` varchar(30) DEFAULT NULL,
+  `estado_nascimento` varchar(30) DEFAULT NULL,
+  `filhos` text DEFAULT NULL,
+  `conjuges` text DEFAULT NULL,
+  `txt_apresentacao` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `atores`
 --
 
-INSERT INTO `atores` (`id`, `nome`, `nascimento`, `falecimento`, `nacionalidade`, `nome_artistico`, `altura`) VALUES
-(1, 'John Christopher Depp II', '1963-06-09', '0000-00-00', 'Estados Unidos', 'Johny Deep', '1,7'),
-(2, 'Matheus de Oliveira Timotheo', '1995-11-02', '0000-00-00', 'Brasileiro', 'LordKafa', NULL),
-(3, 'Bianca Campos Borges', '1111-11-11', '0000-00-00', 'Brasileiro', 'Bibi', NULL),
-(4, 'Bianca Campos Borges', '1111-11-11', '0000-00-00', 'Brasileiro', 'Bibi', NULL),
-(5, 'Leonardo de Souza Timotheo', '2020-02-20', '0000-00-00', 'brasileiro', 'Léo', NULL),
-(6, 'Joelma de Oliveira Timoheo', '1972-08-13', '0000-00-00', 'brasileira', 'calypso', NULL),
-(7, 'Wagner Santos Timotheo', '1967-11-18', '0000-00-00', 'Brasileiro', 'Wagner', NULL),
-(8, 'Leonardo timotheo', '1111-11-11', '0000-00-00', 'Br', 'leo', NULL);
+INSERT INTO `atores` (`id`, `nome`, `nascimento`, `falecimento`, `nacionalidade`, `nome_artistico`, `cidade_nascimento`, `estado_nascimento`, `filhos`, `conjuges`, `txt_apresentacao`) VALUES
+(1, 'John Christopher Depp II', '1963-06-09', '0000-00-00', 'Estados Unidos', 'Johny Deep', NULL, NULL, NULL, NULL, NULL),
+(2, 'Matheus de Oliveira Timotheo', '1995-11-02', '0000-00-00', 'Brasileiro', 'Eu sou Matheus, você não é Mat', 'Rio de Janeiro', 'RJ', 'Leonardo de Souza Timotheo', 'Bianca Campos Borges', 'Eu sou Matheus, você não é Matheus.'),
+(3, 'Bianca Campos Borges', '1111-11-11', '0000-00-00', 'Brasileiro', 'Bibi', NULL, NULL, NULL, NULL, NULL),
+(4, 'Bianca Campos Borges', '1111-11-11', '0000-00-00', 'Brasileiro', 'Bibi', NULL, NULL, NULL, NULL, NULL),
+(5, 'Leonardo de Souza Timotheo', '2020-02-20', '0000-00-00', 'brasileiro', 'Léo', NULL, NULL, NULL, NULL, NULL),
+(6, 'Joelma de Oliveira Timoheo', '1972-08-13', '0000-00-00', 'brasileira', 'calypso', NULL, NULL, NULL, NULL, NULL),
+(7, 'Wagner Santos Timotheo', '1967-11-18', '0000-00-00', 'Brasileiro', 'Wagner', NULL, NULL, NULL, NULL, NULL),
+(8, 'Leonardo timotheo', '1111-11-11', '0000-00-00', 'Br', 'leo', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 

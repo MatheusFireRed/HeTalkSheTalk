@@ -63,11 +63,32 @@
                         <label for="nacionalidade">Nacionalidade</label>
                         <input type="text" name="nacionalidade" id="nacionalidade">
                     </div>
+                    <div class="label-input">
+                        <label for="cidade-nascimento">Cidade de nascimento</label>
+                        <input type="text" name="cidade-nascimento" id="cidade-nascimento">
+                    </div>
+                    <div class="label-input">
+                        <label for="estado-nascimento">Estado de nascimento</label>
+                        <input type="text" name="estado-nascimento" id="estado-nescimento">
+                    </div>
+                    <div class="label-input">
+                        <label for="filhos">Filhos</label>
+                        <input type="text" name="filhos" id="filhos">
+                    </div>
+                    <div class="label-input">
+                        <label for="conjuges">Cônjuges</label>
+                        <input type="text" name="conjuges" id="conjuges">
+                    </div>
                 </div>
 
                 <div class="coluna">
-                    <button>Enviar</button>
+                    <div class="label-input">
+                        <label for="txt-apresentacao">Texto de apresentação</label>
+                        <textarea name="txt-apresentacao" id="txt-apresentacao"></textarea>
+                    </div>
                 </div>
+                
+                    <button>Enviar</button>
             </form>
         </div>
     </main>

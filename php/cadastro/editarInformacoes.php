@@ -68,7 +68,16 @@
             <h2>Editar Registro</h2>
 
             <?php
-            $id = $nome = $nascimento = $nacionalidade = $nomeArtistico = '';
+            $id =
+            $nome =
+            $nascimento =
+            $nacionalidade =
+            $nomeArtistico =
+            $cidadeNascimento =
+            $estadoNascimento =
+            $filhos =
+            $conjuges =
+            $txtApresentacao = '';
 
             // Exibição dos resultados da busca
             if (isset($_GET['busca']) && !empty(trim($_GET['busca']))) {
@@ -76,7 +85,17 @@
 
                 try {
                     // Consulta todos os registros correspondentes
-                    $sql = "SELECT id, nome, nascimento, nacionalidade, nome_artistico FROM atores 
+                    $sql = "SELECT id, 
+                    nome, 
+                    nascimento, 
+                    nacionalidade,
+                    nome_artistico,
+                    cidade_nascimento,
+                    estado_nascimento,
+                    filhos,
+                    conjuges,
+                    txt_apresentacao
+                      FROM atores 
                             WHERE id = :busca OR nome LIKE :nome";
                     $stmt = $pdo->prepare($sql);
                     $stmt->bindValue(':busca', $busca, PDO::PARAM_INT);
@@ -87,13 +106,17 @@
 
                     if ($dados) {
                         echo "<table>";
-                        echo "<tr><th>ID</th><th>Nome</th><th>Nascimento</th><th>Nacionalidade</th><th>Nome Artístico</th><th>Ações</th></tr>";
+                        echo "<tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Nome Artístico</th>
+                        <th>Ações</th>
+                        </tr>";
+
                         foreach ($dados as $registro) {
                             echo "<tr>";
                             echo "<td>" . htmlspecialchars($registro['id']) . "</td>";
                             echo "<td>" . htmlspecialchars($registro['nome']) . "</td>";
-                            echo "<td>" . htmlspecialchars($registro['nascimento']) . "</td>";
-                            echo "<td>" . htmlspecialchars($registro['nacionalidade']) . "</td>";
                             echo "<td>" . htmlspecialchars($registro['nome_artistico']) . "</td>";
                             echo "<td><a href='?editar=" . $registro['id'] . "'>Editar</a></td>";
                             echo "</tr>";
@@ -112,7 +135,16 @@
                 $idSelecionado = intval($_GET['editar']);
 
                 try {
-                    $sql = "SELECT id, nome, nascimento, nacionalidade, nome_artistico FROM atores WHERE id = :id";
+                    $sql = "SELECT id,
+                    nome,
+                    nascimento,
+                    nacionalidade,
+                    nome_artistico,
+                    cidade_nascimento,
+                    estado_nascimento,
+                    filhos,
+                    conjuges,
+                    txt_apresentacao FROM atores WHERE id = :id";
                     $stmt = $pdo->prepare($sql);
                     $stmt->bindValue(':id', $idSelecionado, PDO::PARAM_INT);
                     $stmt->execute();
@@ -120,11 +152,16 @@
                     $registro = $stmt->fetch(PDO::FETCH_ASSOC);
 
                     if ($registro) {
-                        $id = $registro['id'];
-                        $nome = $registro['nome'];
-                        $nascimento = $registro['nascimento'];
-                        $nacionalidade = $registro['nacionalidade'];
-                        $nomeArtistico = $registro['nome_artistico'];
+                        $id                     = $registro['id'];
+                        $nome                   = $registro['nome'];
+                        $nascimento             = $registro['nascimento'];
+                        $nacionalidade          = $registro['nacionalidade'];
+                        $nomeArtistico          = $registro['nome_artistico'];
+                        $cidadeNascimento       = $registro['cidade_nascimento'];
+                        $estadoNascimento       = $registro['estado_nascimento'];
+                        $filhos                 = $registro['filhos'];
+                        $conjuges               = $registro['conjuges'];
+                        $txtApresentacao        = $registro['txt_apresentacao'];
                     } else {
                         echo "<p style='color: red;'>Registro não encontrado.</p>";
                     }
@@ -135,18 +172,28 @@
 
             // Atualizar o registro no banco de dados
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $id = $_POST['id'];
-                $nome = $_POST['nome'];
-                $nascimento = $_POST['nascimento'];
-                $nacionalidade = $_POST['nacionalidade'];
-                $nomeArtistico = $_POST['nome_artistico'];
+                $id                         = $_POST['id'];
+                $nome                       = $_POST['nome'];
+                $nascimento                 = $_POST['nascimento'];
+                $nacionalidade              = $_POST['nacionalidade'];
+                $nomeArtistico              = $_POST['nome_artistico'];
+                $cidadeNascimento           = $_POST['cidade_nascimento'];
+                $estadoNascimento           = $_POST['estado_nascimento'];
+                $filhos                     = $_POST['filhos'];
+                $conjuges                   = $_POST['conjuges'];
+                $txtApresentacao            = $_POST['txt_apresentacao'];
 
                 try {
                     $sql = "UPDATE atores SET 
                                 nome = :nome,
                                 nascimento = :nascimento,
                                 nacionalidade = :nacionalidade,
-                                nome_artistico = :nome_artistico
+                                nome_artistico = :nome_artistico,
+                                cidade_nascimento = :cidade_nascimento,
+                                estado_nascimento = :estado_nascimento,
+                                filhos = :filhos,
+                                conjuges = :conjuges,
+                                txt_apresentacao = :txt_apresentacao
                             WHERE id = :id";
 
                     $stmt = $pdo->prepare($sql);
@@ -155,6 +202,11 @@
                     $stmt->bindParam(':nascimento', $nascimento);
                     $stmt->bindParam(':nacionalidade', $nacionalidade);
                     $stmt->bindParam(':nome_artistico', $nomeArtistico);
+                    $stmt->bindParam(':cidade_nascimento', $cidadeNascimento);
+                    $stmt->bindParam(':estado_nascimento', $estadoNascimento);
+                    $stmt->bindParam(':filhos', $filhos);
+                    $stmt->bindParam(':conjuges', $conjuges);
+                    $stmt->bindParam(':txt_apresentacao', $txtApresentacao);
 
                     $stmt->execute();
 
@@ -185,6 +237,28 @@
                         <label for="nome_artistico">Nome Artístico:</label>
                         <input type="text" id="nome_artistico" name="nome_artistico" value="<?php echo htmlspecialchars($nomeArtistico); ?>">
                     </div>
+                    <div class="label-input">
+                        <label for="cidade_nascimento">Cidade nascimento:</label>
+                        <input type="text" id="cidade_nascimento" name="cidade_nascimento" value="<?php echo htmlspecialchars($cidadeNascimento); ?>">
+                    </div>
+                    <div class="label-input">
+                        <label for="estado_nascimento">Estado nascimento:</label>
+                        <input type="text" id="estado_nascimento" name="estado_nascimento" value="<?php echo htmlspecialchars($estadoNascimento); ?>">
+                    </div>
+                    <div class="label-input">
+                        <label for="filhos">Filhos:</label>
+                        <input type="text" id="filhos" name="filhos" value="<?php echo htmlspecialchars($filhos); ?>">
+                    </div>
+                    <div class="label-input">
+                        <label for="conjuges">Cônjuges:</label>
+                        <input type="text" id="conjuges" name="conjuges" value="<?php echo htmlspecialchars($conjuges); ?>">
+                    </div>
+                    <div class="label-input">
+                        <label for="txt_apresentacao">Texto de apresentacao:</label>
+                        <input type="text" id="txt_apresentacao" name="txt_apresentacao" value="<?php echo htmlspecialchars($txtApresentacao); ?>">
+                    </div>
+
+
                     
                     <button type="submit">Salvar Alterações</button>
                 </form>
