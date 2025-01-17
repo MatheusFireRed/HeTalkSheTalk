@@ -105,6 +105,15 @@ form textarea{
 .label-input{
     display: flex;
     flex-direction: column;
+    height: 50px;
+}
+
+.label-input-alto{
+    height: 200px;
+}
+
+.label-input-textarea{
+    height: 300px;
 }
 
 
@@ -126,11 +135,6 @@ form textarea{
     gap: 5px;
 }
 
-.label-input {
-    display: flex;
-    flex-direction: column;
-    height: 30%; /* Ocupa 100% da altura da div pai */
-}
 
 #search-categorias, #search-atores {
     margin-bottom: 10px;

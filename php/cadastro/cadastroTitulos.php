@@ -71,7 +71,7 @@ try {
                         </select>
                     </div>
 
-                    <div class="label-input">
+                    <div class="label-input label-input-alto">
                         <label for="search-categorias">Categorias</label>
                         <input type="text" id="search-categorias" placeholder="Pesquisar categorias...">
                         <div id="categorias" class="categorias-container">
@@ -104,22 +104,10 @@ try {
                         <input type="text" id="pais-origem" name="pais-origem">
                     </div>
 
-                    <div class="label-input">
-                        <label for="roteiro">Roteiro</label>
-                        <input type="text" id="roteiro" name="roteiro">
-                    </div>
+                    
                 </div>
 
                 <div class="coluna">
-                    <div class="label-input">
-                        <label for="meta-dados">MetaDados</label>
-                        <textarea id="meta-dados" name="meta-dados"></textarea>
-                    </div>
-
-                    <div class="label-input">
-                        <label for="sinopse">Sinopse</label>
-                        <textarea id="sinopse" name="sinopse"></textarea>
-                    </div>
 
                     <div class="label-input">
                         <label for="classificacao">Classificação</label>
@@ -127,6 +115,11 @@ try {
                     </div>
 
                     <div class="label-input">
+                        <label for="roteiro">Roteiro</label>
+                        <input type="text" id="roteiro" name="roteiro">
+                    </div>
+
+                    <div class="label-input label-input-alto">
                         <label for="search-atores">Atores</label>
                         <input type="text" id="search-atores" placeholder="Pesquisar atores...">
                         <div id="atores" class="categorias-container">
@@ -139,6 +132,18 @@ try {
                         </div>
                     </div>
                 </div>
+
+                <div class="coluna">
+                    <div class="label-input label-input-textarea">
+                            <label for="meta-dados">MetaDados</label>
+                            <textarea id="meta-dados" name="meta-dados"></textarea>
+                        </div>
+
+                        <div class="label-input label-input-textarea">
+                            <label for="sinopse">Sinopse</label>
+                            <textarea id="sinopse" name="sinopse"></textarea>
+                        </div>
+                    </div>
                 <button type="submit">Enviar</button>
             </form>
         </div>

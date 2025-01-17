@@ -1,5 +1,5 @@
 <?php
-require_once 'conexaoDB.php';
+require_once '../DB/conexaoDB.php';
 
 $titulo             = $_POST['titulo'];
 $tipo               = $_POST['tipo'];
@@ -91,9 +91,9 @@ try {
     // Redirecionar para a página de sucesso
     header("Location: ../../html/cadastroFeitoComSucesso.html");
     exit;
-} catch (PDOException $e) {
+}   catch (PDOException $e) {
     // Caso ocorra erro, desfazer as transações
     $pdo->rollBack();
     echo "Erro: " . $e->getMessage();
-}
+    }
 ?>

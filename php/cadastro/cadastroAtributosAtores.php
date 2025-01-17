@@ -20,13 +20,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php echo $tituloDaPagina; ?></title>
 
     <link rel="stylesheet" href="../../style/styleCadastroTitulo.css">
+
+    <style>
+        .label-input{
+            height: 40px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <?php include 'headerCadastro.php'; ?>
     </header>
+    <main>
+        <div class="card">
+            <form action="incluirAtores.php" method="post">
+
+                <div class="coluna">
+                    <div class="label-input">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome">
+                    </div>
+                    <div class="label-input">
+                        <label for="nome-artistico">Nome artistico</label>
+                        <input type="text" name="nome-artistico" id="nome-artistico">
+                    </div>
+                    <div class="label-input">
+                        <label for="data-nascimento">Data de nascimento</label>
+                        <input type="date" name="data-nascimento" id="data-nascimento">
+                    </div>
+                    <div class="label-input">
+                        <label for="data-falecimento">Data de falecimento</label>
+                        <input type="date" name="data-falecimento" id="data-falecimento">
+                    </div>
+                    <div class="label-input">
+                        <label for="nacionalidade">Nacionalidade</label>
+                        <input type="text" name="nacionalidade" id="nacionalidade">
+                    </div>
+                </div>
+
+                <div class="coluna">
+                    <button>Enviar</button>
+                </div>
+            </form>
+        </div>
+    </main>
 </body>
 </html>
