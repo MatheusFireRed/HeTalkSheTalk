@@ -216,47 +216,68 @@
                 }
             }
             ?>
-
+            <style>
+                .linha{
+                    width: 100%;
+                    display: flex;
+                    gap: 5px;
+                }
+            </style>
             <!-- Formulário de edição -->
             <?php if ($id): ?>
                 <form class="informacoes" method="POST" action="">
                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
-                    <div class="label-input">
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($nome); ?>">
+                    
+                    <div class="linha">
+                        <div class="coluna">
+                            <div class="label-input">
+                                <label for="nome">Nome:</label>
+                                <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($nome); ?>">
+                            </div>
+                            <div class="label-input">
+                                <label for="nascimento">Data de Nascimento:</label>
+                                <input type="date" id="nascimento" name="nascimento" value="<?php echo htmlspecialchars($nascimento); ?>">
+                            </div>
+                            <div class="label-input">
+                                <label for="nacionalidade">Nacionalidade:</label>
+                                <input type="text" id="nacionalidade" name="nacionalidade" value="<?php echo htmlspecialchars($nacionalidade); ?>">
+                            </div>
+                            <div class="label-input">
+                                <label for="nome_artistico">Nome Artístico:</label>
+                                <input type="text" id="nome_artistico" name="nome_artistico" value="<?php echo htmlspecialchars($nomeArtistico); ?>">
+                            </div>
+                        </div>
+
+                        <div class="coluna">
+                            <div class="label-input">
+                                <label for="cidade_nascimento">Cidade nascimento:</label>
+                                <input type="text" id="cidade_nascimento" name="cidade_nascimento" value="<?php echo htmlspecialchars($cidadeNascimento); ?>">
+                            </div>
+                            <div class="label-input">
+                                <label for="estado_nascimento">Estado nascimento:</label>
+                                <input type="text" id="estado_nascimento" name="estado_nascimento" value="<?php echo htmlspecialchars($estadoNascimento); ?>">
+                            </div>
+                            <div class="label-input">
+                                <label for="filhos">Filhos:</label>
+                                <input type="text" id="filhos" name="filhos" value="<?php echo htmlspecialchars($filhos); ?>">
+                            </div>
+                            <div class="label-input">
+                                <label for="conjuges">Cônjuges:</label>
+                                <input type="text" id="conjuges" name="conjuges" value="<?php echo htmlspecialchars($conjuges); ?>">
+                            </div>
+                        </div>
+
+                        <div class="coluna">
+                            <div class="label-input">
+                                <label for="txt_apresentacao">Texto de apresentacao:</label>
+                                <input type="text" id="txt_apresentacao" name="txt_apresentacao" value="<?php echo htmlspecialchars($txtApresentacao); ?>">
+                            </div>
+                        </div>
                     </div>
-                    <div class="label-input">
-                        <label for="nascimento">Data de Nascimento:</label>
-                        <input type="date" id="nascimento" name="nascimento" value="<?php echo htmlspecialchars($nascimento); ?>">
-                    </div>
-                    <div class="label-input">
-                        <label for="nacionalidade">Nacionalidade:</label>
-                        <input type="text" id="nacionalidade" name="nacionalidade" value="<?php echo htmlspecialchars($nacionalidade); ?>">
-                    </div>
-                    <div class="label-input">
-                        <label for="nome_artistico">Nome Artístico:</label>
-                        <input type="text" id="nome_artistico" name="nome_artistico" value="<?php echo htmlspecialchars($nomeArtistico); ?>">
-                    </div>
-                    <div class="label-input">
-                        <label for="cidade_nascimento">Cidade nascimento:</label>
-                        <input type="text" id="cidade_nascimento" name="cidade_nascimento" value="<?php echo htmlspecialchars($cidadeNascimento); ?>">
-                    </div>
-                    <div class="label-input">
-                        <label for="estado_nascimento">Estado nascimento:</label>
-                        <input type="text" id="estado_nascimento" name="estado_nascimento" value="<?php echo htmlspecialchars($estadoNascimento); ?>">
-                    </div>
-                    <div class="label-input">
-                        <label for="filhos">Filhos:</label>
-                        <input type="text" id="filhos" name="filhos" value="<?php echo htmlspecialchars($filhos); ?>">
-                    </div>
-                    <div class="label-input">
-                        <label for="conjuges">Cônjuges:</label>
-                        <input type="text" id="conjuges" name="conjuges" value="<?php echo htmlspecialchars($conjuges); ?>">
-                    </div>
-                    <div class="label-input">
-                        <label for="txt_apresentacao">Texto de apresentacao:</label>
-                        <input type="text" id="txt_apresentacao" name="txt_apresentacao" value="<?php echo htmlspecialchars($txtApresentacao); ?>">
-                    </div>
+                    
+                    
+                    
+                    
 
 
                     
